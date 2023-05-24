@@ -1,0 +1,57 @@
+<div class="row">
+  <div class="col-8 m-auto">
+    <h1>CADASTRO DE ESTUDANTES</h1>
+    <form [formGroup]="formGroupEstudante">
+      <div class="mb-3">
+        <label for="nome" class="form-label">Nome: </label>
+        <input type="text" class="form-control"  formControlName="nome" id="nome" placeholder="nome">
+      </div>
+      <div class="mb-3">
+        <label for="telefone" class="form-label" >Telefone </label>
+        <input type="text" class="form-control" id="telefone" placeholder="99999999" formControlName="telefone" >
+      </div>
+      <div class="mb-3">
+        <label for="curso" class="form-label" formControlName="curso" >Curso </label>
+        <input type="text" class="form-control" id="curso" placeholder="ex: medicina" formControlName="curso" >
+      </div>
+      <div class="mb-3">
+        <label for="campus" class="form-label">Campus </label>
+        <input type="text" class="form-control" id="campus" placeholder="ex: Itu" formControlName="campus" >
+      </div>
+      <div class="mb-3 d-flex justify-content-center" >
+        <button type="button"class="btn btn-info" (click)="save()">Cadastrar</button>
+      </div>
+      
+    
+
+
+
+    </form>
+  </div>
+</div>
+
+
+
+
+
+
+<table class="table container" >
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Telefone</th>
+        <th scope="col">Curso</th>
+        <th scope="col">Campus</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let estudante of estudantes">
+        <th scope="row">{{estudante.id}}</th>
+        <td>{{estudante.nome}}</td>
+        <td>{{estudante.telefone}}</td>
+        <td>{{estudante.curso}}</td>
+        <td>{{estudante.campus}}</td>
+      </tr>
+    </tbody>
+  </table>
